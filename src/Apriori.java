@@ -34,7 +34,7 @@ public class Apriori {
 
     public void executar() {
         Map<Set<String>, Double> itensFrequentes = new HashMap<>();
-        Set<Set<String>> candidatos = gerarCandidatos1();
+        Set<Set<String>> candidatos = gerarCandidatos();
         int k = 1;
 
         while (!candidatos.isEmpty()) {
@@ -46,7 +46,7 @@ public class Apriori {
         gerarRegras(itensFrequentes);
     }
 
-    private Set<Set<String>> gerarCandidatos1() {
+    private Set<Set<String>> gerarCandidatos() {
         Set<Set<String>> candidatos = new HashSet<>();
         for (Set<String> t : transacoes) {
             for (String item : t) {
